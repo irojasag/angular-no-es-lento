@@ -17,9 +17,11 @@ import { CharacterComponent } from './character/character.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
 import { LocationsComponent } from './locations/locations.component';
 import { LocationCardComponent } from './location-card/location-card.component';
+import { EpisodesComponent } from './episodes/episodes.component';
+import { EpisodeCardComponent } from './episode-card/episode-card.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, DashboardComponent, DashboardLocationComponent, DashboardCharactersComponent, DashboardEpisodesComponent, ContactComponent, AboutComponent, CharacterComponent, CharacterCardComponent, LocationsComponent, LocationCardComponent],
+  declarations: [AppComponent, LayoutComponent, DashboardComponent, DashboardLocationComponent, DashboardCharactersComponent, DashboardEpisodesComponent, ContactComponent, AboutComponent, CharacterComponent, CharacterCardComponent, LocationsComponent, LocationCardComponent, EpisodesComponent, EpisodeCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CharacterComponent } from './character/character.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EpisodesComponent } from './episodes/episodes.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LocationsComponent } from './locations/locations.component';
 
@@ -23,6 +24,10 @@ const routes: Routes = [
       {
         path: 'locations',
         component: LocationsComponent,
+      },
+      {
+        path: 'episodes',
+        component: EpisodesComponent,
       },
       {
         path: 'about',
