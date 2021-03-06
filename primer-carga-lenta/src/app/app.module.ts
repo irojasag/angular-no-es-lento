@@ -13,9 +13,11 @@ import { DashboardCharactersComponent } from './dashboard-characters/dashboard-c
 import { DashboardEpisodesComponent } from './dashboard-episodes/dashboard-episodes.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { CharacterComponent } from './character/character.component';
+import { CharacterCardComponent } from './character-card/character-card.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, DashboardComponent, DashboardLocationComponent, DashboardCharactersComponent, DashboardEpisodesComponent, ContactComponent, AboutComponent],
+  declarations: [AppComponent, LayoutComponent, DashboardComponent, DashboardLocationComponent, DashboardCharactersComponent, DashboardEpisodesComponent, ContactComponent, AboutComponent, CharacterComponent, CharacterCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
