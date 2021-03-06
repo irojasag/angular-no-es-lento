@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { mockCharacters } from '../mock/characters.mock';
 import { CharacterService } from '../services/character.service';
 
 @Component({

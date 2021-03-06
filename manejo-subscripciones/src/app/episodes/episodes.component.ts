@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { mockEpisodes } from '../mock/episodes.mock';
 import { EpisodeService } from '../services/episode.service';
 
 @Component({
