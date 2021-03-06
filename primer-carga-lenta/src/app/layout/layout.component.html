@@ -1,0 +1,23 @@
+<mat-toolbar class="absolute z-20">
+  <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Rick and Morty</span>
+</mat-toolbar>
+
+
+<mat-drawer-container class="h-screen absolute top-0 left-0 pt-16">
+  <mat-drawer #drawer opened mode="side" class="pt-14 w-48">
+    <mat-list>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Dashboard</mat-list-item>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Characters</mat-list-item>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Locations</mat-list-item>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Episodes</mat-list-item>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">About</mat-list-item>
+      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Contact</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="p-4">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
