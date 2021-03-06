@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { mockEpisodes } from '../mock/episodes.mock';
+import { EpisodeService } from '../services/episode.service';
 
 @Component({
   selector: 'app-episodes',
@@ -7,8 +8,16 @@ import { mockEpisodes } from '../mock/episodes.mock';
   styleUrls: ['./episodes.component.scss'],
 })
 export class EpisodesComponent implements OnInit {
-  public response = mockEpisodes;
-  constructor() {}
+  public response;
 
-  ngOnInit(): void {}
+  constructor(private episodeService: EpisodeService) {
+    this.episodeService.episodes$.subscribe((episodesResponse) => {
+      console.log('SUB DE EPISODE');
+      this.response = episodesResponse;
+    });
+  }
+
+  ngOnInit(): void {
+    this.episodeService.getAllEpisodes();
+  }
 }
