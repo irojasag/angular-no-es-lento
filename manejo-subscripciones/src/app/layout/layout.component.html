@@ -1,0 +1,23 @@
+<mat-toolbar class="absolute z-20" [color]="'primary'">
+  <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="ml-4">Rick and Morty</span>
+</mat-toolbar>
+
+
+<mat-drawer-container class="h-screen absolute top-0 left-0 pt-16">
+  <mat-drawer #drawer opened mode="side" class="pt-14 w-48">
+    <mat-list>
+      <mat-list-item routerLink="dashboard" routerLinkActive="bg-gray-300" class="sidenav-item">Resumen</mat-list-item>
+      <mat-list-item routerLink="characters" routerLinkActive="bg-gray-300" class="sidenav-item">Personajes</mat-list-item>
+      <mat-list-item routerLink="locations" routerLinkActive="bg-gray-300" class="sidenav-item">Ubicaciones</mat-list-item>
+      <mat-list-item routerLink="episodes" routerLinkActive="bg-gray-300" class="sidenav-item">Episodios</mat-list-item>
+      <mat-list-item routerLink="about" routerLinkActive="bg-gray-300" class="sidenav-item">Acerca de</mat-list-item>
+      <mat-list-item routerLink="contact" routerLinkActive="bg-gray-300" class="sidenav-item">Contacto</mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="p-4">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

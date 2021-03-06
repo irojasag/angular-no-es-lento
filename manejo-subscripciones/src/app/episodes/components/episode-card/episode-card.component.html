@@ -1,0 +1,11 @@
+<div class="bg-white shadow rounded-md w-96 h-48 flex flex-row justify-center m-2">
+  <div class="flex flex-col w-full p-2">
+    <span class="text-2xl font-bold whitespace-nowrap overflow-ellipsis w-64 overflow-hidden">{{episode.name}}</span>
+    <span class="text-gray-500">Fecha de lanzamiento:</span>
+    <span class="">{{episode.air_date | date}}</span>
+    <span class="text-gray-500">Episodio:</span>
+    <span class="">{{episode.episode}}</span>
+    <span class="text-gray-500">Personajes:</span>
+    <span class="">{{episode.characters.length | number}}</span>
+  </div>
+</div>
