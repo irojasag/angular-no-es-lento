@@ -1,0 +1,6 @@
+<span class="text-2xl mb-8">Ubicaciones de la serie</span>
+
+
+<div class="flex flex-row flex-wrap">
+  <app-episode-card *ngFor="let item of response?.results" [episode]="item"></app-episode-card>
+</div>

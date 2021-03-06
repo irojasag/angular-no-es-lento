@@ -1,0 +1,6 @@
+<span class="text-2xl mb-8">Personajes de la serie</span>
+
+
+<div class="flex flex-row flex-wrap">
+  <app-character-card *ngFor="let item of response?.results" [character]="item"></app-character-card>
+</div>
