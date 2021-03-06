@@ -23,6 +23,13 @@ export class DashboardCharactersComponent implements OnInit, OnDestroy {
     );
   }
 
+  public loadData(): void {
+    this.response = null;
+    this.count = null;
+    this.mostrar = true;
+    this.characterService.getAllCharacters(true);
+  }
+
   public getCount(): number {
     console.log('CALCULA LA CHARACTERS');
     if (this.response) {

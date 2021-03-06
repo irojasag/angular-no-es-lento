@@ -23,6 +23,13 @@ export class DashboardEpisodesComponent implements OnInit {
     );
   }
 
+  public loadData(): void {
+    this.response = null;
+    this.count = null;
+    this.mostrar = true;
+    this.episodeService.getAllEpisodes(true);
+  }
+
   public getCount(): number {
     console.log('CALCULA LA EPISODES');
     if (this.response) {

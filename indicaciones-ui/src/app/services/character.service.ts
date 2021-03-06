@@ -13,8 +13,8 @@ export class CharacterService {
     this.characters$ = new BehaviorSubject<any>(null);
   }
 
-  public getAllCharacters() {
-    if (!this.characters) {
+  public getAllCharacters(force?: boolean) {
+    if (force || !this.characters) {
       this.http
         .get('https://rickandmortyapi.com/api/character')
         .subscribe((response) => {

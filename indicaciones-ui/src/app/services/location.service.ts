@@ -12,8 +12,8 @@ export class LocationService {
     this.locations$ = new BehaviorSubject<any>(null);
   }
 
-  public getAllLocations() {
-    if (!this.locations) {
+  public getAllLocations(force?: boolean) {
+    if (force || !this.locations) {
       this.http
         .get('https://rickandmortyapi.com/api/location')
         .subscribe((response) => {

@@ -23,6 +23,13 @@ export class DashboardLocationComponent implements OnInit {
     );
   }
 
+  public loadData(): void {
+    this.response = null;
+    this.count = null;
+    this.mostrar = true;
+    this.locationService.getAllLocations(true);
+  }
+
   public getCount(): number {
     console.log('CALCULA LA LOCATIONS');
     if (this.response) {

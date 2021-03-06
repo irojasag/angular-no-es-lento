@@ -12,8 +12,8 @@ export class EpisodeService {
     this.episodes$ = new BehaviorSubject<any>(null);
   }
 
-  public getAllEpisodes() {
-    if (!this.episodes) {
+  public getAllEpisodes(force?: boolean) {
+    if (force || !this.episodes) {
       this.http
         .get('https://rickandmortyapi.com/api/episode')
         .subscribe((response) => {
