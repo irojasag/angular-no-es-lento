@@ -9,6 +9,7 @@ import { CharacterService } from 'src/app/services/character.service';
 })
 export class DashboardCharactersComponent implements OnInit, OnDestroy {
   public response;
+  public mostrar: boolean = true;
   private subscriptions: Subscription;
   constructor(private characterService: CharacterService) {
     this.subscriptions = new Subscription();
@@ -18,6 +19,17 @@ export class DashboardCharactersComponent implements OnInit, OnDestroy {
         this.response = charactersResponse;
       })
     );
+  }
+
+  public getCount(): number {
+    console.log('CALCULA LA CHARACTERS');
+    if (this.response) {
+      let count = 0;
+      this.response.results.forEach(() => (count = count + 1));
+      return count;
+    } else {
+      return 0;
+    }
   }
 
   ngOnInit(): void {

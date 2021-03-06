@@ -9,6 +9,7 @@ import { LocationService } from 'src/app/services/location.service';
 })
 export class DashboardLocationComponent implements OnInit {
   public response;
+  public mostrar: boolean = true;
   private subscriptions: Subscription;
   constructor(private locationService: LocationService) {
     this.subscriptions = new Subscription();
@@ -18,6 +19,17 @@ export class DashboardLocationComponent implements OnInit {
         this.response = locationsResponse;
       })
     );
+  }
+
+  public getCount(): number {
+    console.log('CALCULA LA LOCATIONS');
+    if (this.response) {
+      let count = 0;
+      this.response.results.forEach(() => (count = count + 1));
+      return count;
+    } else {
+      return 0;
+    }
   }
 
   ngOnInit(): void {

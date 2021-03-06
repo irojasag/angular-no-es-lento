@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardCharactersComponent } from './components/dashboard-characters/dashboard-characters.component';
 import { DashboardEpisodesComponent } from './components/dashboard-episodes/dashboard-episodes.component';
 import { DashboardLocationComponent } from './components/dashboard-location/dashboard-location.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { DashboardLocationComponent } from './components/dashboard-location/dash
     DashboardEpisodesComponent,
     DashboardLocationComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [CommonModule, DashboardRoutingModule, MatButtonModule],
 })
 export class DashboardModule {}

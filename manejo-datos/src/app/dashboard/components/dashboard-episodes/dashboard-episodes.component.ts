@@ -9,6 +9,7 @@ import { EpisodeService } from 'src/app/services/episode.service';
 })
 export class DashboardEpisodesComponent implements OnInit {
   public response;
+  public mostrar: boolean = true;
   private subscriptions: Subscription;
   constructor(private episodeService: EpisodeService) {
     this.subscriptions = new Subscription();
@@ -18,6 +19,17 @@ export class DashboardEpisodesComponent implements OnInit {
         this.response = episodesResponse;
       })
     );
+  }
+
+  public getCount(): number {
+    console.log('CALCULA LA EPISODES');
+    if (this.response) {
+      let count = 0;
+      this.response.results.forEach(() => (count = count + 1));
+      return count;
+    } else {
+      return 0;
+    }
   }
 
   ngOnInit(): void {
