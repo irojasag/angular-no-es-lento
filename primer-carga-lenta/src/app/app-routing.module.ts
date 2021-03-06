@@ -5,6 +5,7 @@ import { CharacterComponent } from './character/character.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LocationsComponent } from './locations/locations.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'characters',
         component: CharacterComponent,
+      },
+      {
+        path: 'locations',
+        component: LocationsComponent,
       },
       {
         path: 'about',
