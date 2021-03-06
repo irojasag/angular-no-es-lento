@@ -10,6 +10,7 @@ import { LocationService } from 'src/app/services/location.service';
 export class DashboardLocationComponent implements OnInit {
   public response;
   public mostrar: boolean = true;
+  public count: number;
   private subscriptions: Subscription;
   constructor(private locationService: LocationService) {
     this.subscriptions = new Subscription();
@@ -17,6 +18,7 @@ export class DashboardLocationComponent implements OnInit {
       this.locationService.locations$.subscribe((locationsResponse) => {
         console.log('SUB DE LOCATIONS');
         this.response = locationsResponse;
+        this.count = this.getCount();
       })
     );
   }

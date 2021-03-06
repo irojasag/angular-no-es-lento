@@ -10,6 +10,7 @@ import { CharacterService } from 'src/app/services/character.service';
 export class DashboardCharactersComponent implements OnInit, OnDestroy {
   public response;
   public mostrar: boolean = true;
+  public count: number;
   private subscriptions: Subscription;
   constructor(private characterService: CharacterService) {
     this.subscriptions = new Subscription();
@@ -17,6 +18,7 @@ export class DashboardCharactersComponent implements OnInit, OnDestroy {
       this.characterService.characters$.subscribe((charactersResponse) => {
         console.log('SUB DE CHARACTERS');
         this.response = charactersResponse;
+        this.count = this.getCount();
       })
     );
   }

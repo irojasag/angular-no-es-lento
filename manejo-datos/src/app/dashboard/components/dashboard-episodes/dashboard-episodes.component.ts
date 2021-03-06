@@ -10,6 +10,7 @@ import { EpisodeService } from 'src/app/services/episode.service';
 export class DashboardEpisodesComponent implements OnInit {
   public response;
   public mostrar: boolean = true;
+  public count: number;
   private subscriptions: Subscription;
   constructor(private episodeService: EpisodeService) {
     this.subscriptions = new Subscription();
@@ -17,6 +18,7 @@ export class DashboardEpisodesComponent implements OnInit {
       this.episodeService.episodes$.subscribe((episodesResponse) => {
         console.log('SUB DE EPISODES');
         this.response = episodesResponse;
+        this.count = this.getCount();
       })
     );
   }

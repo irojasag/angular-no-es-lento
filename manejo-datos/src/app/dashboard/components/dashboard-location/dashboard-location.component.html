@@ -1,7 +1,7 @@
 <div class="flex flex-row justify-end w-64 mb-4">
   <button mat-raised-button color="primary" (click)="mostrar = !mostrar">Mostrar | Ocultar</button>
 </div>
-<div class="bg-white border border-black w-64 rounded-md p-4" *ngIf="mostrar">
+<div class=" bg-white border border-black w-64 rounded-md p-4" [hidden]="!mostrar">
   <div class="flex flex row">
     <span class="text-lg font-medium">Ubicaciones</span>
   </div>
@@ -9,6 +9,6 @@
     <span class="text-3xl font-bold">{{response?.info.count | number}}</span>
   </div>
   <div class="flex flex row justify-center">
-    <span class="">{{getCount() | number}} Por página</span>
+    <span class="">{{count | number}} Por página</span>
   </div>
 </div>
