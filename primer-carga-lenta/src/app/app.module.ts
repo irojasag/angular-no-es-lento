@@ -8,9 +8,12 @@ import { MaterialModule } from './material-module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardLocationComponent } from './dashboard-location/dashboard-location.component';
+import { DashboardCharactersComponent } from './dashboard-characters/dashboard-characters.component';
+import { DashboardEpisodesComponent } from './dashboard-episodes/dashboard-episodes.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, DashboardComponent],
+  declarations: [AppComponent, LayoutComponent, DashboardComponent, DashboardLocationComponent, DashboardCharactersComponent, DashboardEpisodesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
