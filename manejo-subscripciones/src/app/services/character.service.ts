@@ -7,15 +7,20 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CharacterService {
   public characters$: BehaviorSubject<any>;
+  public characters: any;
+
   constructor(private http: HttpClient) {
     this.characters$ = new BehaviorSubject<any>(null);
   }
 
   public getAllCharacters() {
-    this.http
-      .get('https://rickandmortyapi.com/api/character')
-      .subscribe((response) => {
-        this.characters$.next(response);
-      });
+    if (!this.characters) {
+      this.http
+        .get('https://rickandmortyapi.com/api/character')
+        .subscribe((response) => {
+          this.characters$.next(response);
+          this.characters = response;
+        });
+    }
   }
 }

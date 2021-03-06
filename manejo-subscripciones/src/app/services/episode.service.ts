@@ -7,15 +7,19 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class EpisodeService {
   public episodes$: BehaviorSubject<any>;
+  public episodes: any;
   constructor(private http: HttpClient) {
     this.episodes$ = new BehaviorSubject<any>(null);
   }
 
   public getAllEpisodes() {
-    this.http
-      .get('https://rickandmortyapi.com/api/episode')
-      .subscribe((response) => {
-        this.episodes$.next(response);
-      });
+    if (!this.episodes) {
+      this.http
+        .get('https://rickandmortyapi.com/api/episode')
+        .subscribe((response) => {
+          this.episodes$.next(response);
+          this.episodes = response;
+        });
+    }
   }
 }

@@ -7,15 +7,19 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LocationService {
   public locations$: BehaviorSubject<any>;
+  public locations: any;
   constructor(private http: HttpClient) {
     this.locations$ = new BehaviorSubject<any>(null);
   }
 
   public getAllLocations() {
-    this.http
-      .get('https://rickandmortyapi.com/api/location')
-      .subscribe((response) => {
-        this.locations$.next(response);
-      });
+    if (!this.locations) {
+      this.http
+        .get('https://rickandmortyapi.com/api/location')
+        .subscribe((response) => {
+          this.locations$.next(response);
+          this.locations = response;
+        });
+    }
   }
 }
