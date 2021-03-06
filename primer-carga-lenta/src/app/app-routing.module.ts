@@ -15,27 +15,33 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent,
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
       {
         path: 'characters',
-        component: CharacterComponent,
+        loadChildren: () =>
+          import('./character/character.module').then((m) => m.CharacterModule),
       },
       {
         path: 'locations',
-        component: LocationsComponent,
+        loadChildren: () =>
+          import('./locations/locations.module').then((m) => m.LocationsModule),
       },
       {
         path: 'episodes',
-        component: EpisodesComponent,
+        loadChildren: () =>
+          import('./episodes/episodes.module').then((m) => m.EpisodesModule),
       },
       {
         path: 'about',
-        component: AboutComponent,
+        loadChildren: () =>
+          import('./about/about.module').then((m) => m.AboutModule),
       },
       {
         path: 'contact',
-        component: ContactComponent,
+        loadChildren: () =>
+          import('./contact/contact.module').then((m) => m.ContactModule),
       },
       {
         path: '**',
