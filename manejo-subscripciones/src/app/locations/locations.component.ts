@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { mockLocations } from '../mock/locations.mock';
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-locations',
@@ -7,8 +8,16 @@ import { mockLocations } from '../mock/locations.mock';
   styleUrls: ['./locations.component.scss'],
 })
 export class LocationsComponent implements OnInit {
-  public response = mockLocations;
-  constructor() {}
+  public response;
 
-  ngOnInit(): void {}
+  constructor(private locationService: LocationService) {
+    this.locationService.locations$.subscribe((locationsResponse) => {
+      console.log('SUB DE LOCATION');
+      this.response = locationsResponse;
+    });
+  }
+
+  ngOnInit(): void {
+    this.locationService.getAllLocations();
+  }
 }
