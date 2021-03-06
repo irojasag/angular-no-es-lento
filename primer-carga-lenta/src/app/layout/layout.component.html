@@ -9,12 +9,12 @@
 <mat-drawer-container class="h-screen absolute top-0 left-0 pt-16">
   <mat-drawer #drawer opened mode="side" class="pt-14 w-48">
     <mat-list>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Resumen</mat-list-item>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Personajes</mat-list-item>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Ubicaciones</mat-list-item>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Episodios</mat-list-item>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Acerca de</mat-list-item>
-      <mat-list-item class="shadow hover:bg-gray-200 cursor-pointer">Contacto</mat-list-item>
+      <mat-list-item routerLink="dashboard" routerLinkActive="bg-gray-300" class="sidenav-item">Resumen</mat-list-item>
+      <mat-list-item routerLink="characters" routerLinkActive="bg-gray-300" class="sidenav-item">Personajes</mat-list-item>
+      <mat-list-item routerLink="locations" routerLinkActive="bg-gray-300" class="sidenav-item">Ubicaciones</mat-list-item>
+      <mat-list-item routerLink="episodes" routerLinkActive="bg-gray-300" class="sidenav-item">Episodios</mat-list-item>
+      <mat-list-item routerLink="about" routerLinkActive="bg-gray-300" class="sidenav-item">Acerca de</mat-list-item>
+      <mat-list-item routerLink="contact" routerLinkActive="bg-gray-300" class="sidenav-item">Contacto</mat-list-item>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content class="p-4">

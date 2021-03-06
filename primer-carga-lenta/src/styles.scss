@@ -1,3 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.sidenav-item {
+  @apply shadow hover:bg-gray-200 cursor-pointer;
+}
