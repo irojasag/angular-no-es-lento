@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { CharacterService } from 'src/app/services/character.service';
 export class DashboardCharactersComponent implements OnInit, OnDestroy {
   public response;
   public mostrar: boolean = true;
+  public loading: boolean = false;
   public count: number;
   private subscriptions: Subscription;
   constructor(private characterService: CharacterService) {
@@ -19,6 +21,7 @@ export class DashboardCharactersComponent implements OnInit, OnDestroy {
         console.log('SUB DE CHARACTERS');
         this.response = charactersResponse;
         this.count = this.getCount();
+        this.loading = false;
       })
     );
   }
@@ -27,6 +30,7 @@ export class DashboardCharactersComponent implements OnInit, OnDestroy {
     this.response = null;
     this.count = null;
     this.mostrar = true;
+    this.loading = true;
     this.characterService.getAllCharacters(true);
   }
 

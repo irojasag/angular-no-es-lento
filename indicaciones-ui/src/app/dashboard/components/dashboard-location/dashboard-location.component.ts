@@ -10,6 +10,7 @@ import { LocationService } from 'src/app/services/location.service';
 export class DashboardLocationComponent implements OnInit {
   public response;
   public mostrar: boolean = true;
+  public loading: boolean = false;
   public count: number;
   private subscriptions: Subscription;
   constructor(private locationService: LocationService) {
@@ -19,6 +20,7 @@ export class DashboardLocationComponent implements OnInit {
         console.log('SUB DE LOCATIONS');
         this.response = locationsResponse;
         this.count = this.getCount();
+        this.loading = false;
       })
     );
   }
@@ -27,6 +29,7 @@ export class DashboardLocationComponent implements OnInit {
     this.response = null;
     this.count = null;
     this.mostrar = true;
+    this.loading = true;
     this.locationService.getAllLocations(true);
   }
 

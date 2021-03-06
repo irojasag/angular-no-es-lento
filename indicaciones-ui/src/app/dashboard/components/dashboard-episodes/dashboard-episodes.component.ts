@@ -11,6 +11,7 @@ export class DashboardEpisodesComponent implements OnInit {
   public response;
   public mostrar: boolean = true;
   public count: number;
+  public loading: boolean = false;
   private subscriptions: Subscription;
   constructor(private episodeService: EpisodeService) {
     this.subscriptions = new Subscription();
@@ -19,6 +20,7 @@ export class DashboardEpisodesComponent implements OnInit {
         console.log('SUB DE EPISODES');
         this.response = episodesResponse;
         this.count = this.getCount();
+        this.loading = false;
       })
     );
   }
@@ -27,6 +29,7 @@ export class DashboardEpisodesComponent implements OnInit {
     this.response = null;
     this.count = null;
     this.mostrar = true;
+    this.loading = true;
     this.episodeService.getAllEpisodes(true);
   }
 

@@ -1,10 +1,10 @@
 <div class="flex flex-row justify-between w-64 mb-4">
-  <button mat-raised-button color="primary" (click)="loadData()">
-    <mat-icon>autorenew</mat-icon>
+  <button mat-raised-button color="primary" [disabled]="loading" (click)="loadData()">
+    <mat-icon [ngClass]="{ 'animate-spin': loading }">autorenew</mat-icon>
   </button>
   <button mat-raised-button color="primary" (click)="mostrar = !mostrar">Mostrar | Ocultar</button>
 </div>
-<div class="bg-white border border-black w-64 rounded-md p-4" [hidden]="!mostrar">
+<div class="bg-white border border-black h-32 w-64 rounded-md p-4" [hidden]="!mostrar">
   <div class="flex flex row">
     <span class="text-lg font-medium">Episodios</span>
   </div>
